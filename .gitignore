@@ -1,0 +1,10 @@
+# Ignore Python cache
+__pycache__/
+*.pyc
+# Ignore node_modules
+node_modules/
+# Ignore VSCode settings
+.vscode/
+# Ignore OS files
+.DS_Store
+Thumbs.db
