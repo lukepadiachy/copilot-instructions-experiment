@@ -1,10 +1,16 @@
+
 using CopilotWebApp.Components;
+using CopilotWebApp.Interfaces;
+using CopilotWebApp.Services;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
+builder.Services.AddScoped<IWeatherService, WeatherService>();
+builder.Services.AddScoped<IPokemonService, PokemonService>();
 
 var app = builder.Build();
 

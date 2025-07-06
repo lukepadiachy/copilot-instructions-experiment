@@ -1,5 +1,8 @@
+@using CopilotWebApp.Interfaces
+@inject IPokemonService _pokemonService
 @page "/pokemon"
-@using PokeApiNet
+
+<PageTitle>Pokemon</PageTitle>
 
 <h1 class="pokemon-title">Pokémon Gallery</h1>
 
@@ -43,14 +46,18 @@ else
 
     protected override async Task OnInitializedAsync()
     {
-        var client = new PokeApiClient();
-        var page = await client.GetNamedResourcePageAsync<PokeApiNet.Pokemon>(limit: 12, offset: 0);
-        foreach (var entry in page.Results)
+        try
         {
-            var poke = await client.GetResourceAsync<PokeApiNet.Pokemon>(entry.Name);
-            PokemonList.Add(poke);
+            PokemonList = await _pokemonService.GetPokemonListAsync(12, 0);
         }
-        IsLoading = false;
+        catch
+        {
+            PokemonList = new List<PokeApiNet.Pokemon>();
+        }
+        finally
+        {
+            IsLoading = false;
+        }
     }
 }
 
