@@ -15,3 +15,4 @@ This repo demonstrates **3 main ways** to customize GitHub Copilot:
 * [Customize Copilot in VS Code](https://code.visualstudio.com/docs/copilot/copilot-customization)
 * [GitHub Docs – Adding Repo Instructions](https://docs.github.com/en/copilot/how-tos/custom-instructions/adding-repository-custom-instructions-for-github-copilot)
 * [Sample Chat Mode File by Burke Holland](https://gist.github.com/burkeholland/a232b706994aa2f4b2ddd3d97b11f9a7)
+* [PokeApiNet - A .Net wrapper for the Pokemon API](https://gist.github.com/burkeholland/a232b706994aa2f4b2ddd3d97b11f9a7)
