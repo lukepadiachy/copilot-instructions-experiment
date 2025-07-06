@@ -3,6 +3,8 @@ description: "Instructions for building a Pokemon data page using PokeApiNet."
 applyTo: "**"
 ---
 
+> **Note:** When used with the refactor-data-services prompt or global Blazor data services best practices, all Pokémon data access must be via services. Ignore any instructions below that prohibit service usage.
+
 # Build a Pokemon Data Page with PokeApiNet
 
 ## 1. Setup & Package Installation (DO THIS FIRST)
