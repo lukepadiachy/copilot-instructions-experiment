@@ -5,22 +5,23 @@ applyTo: "**"
 
 # Build a Pokemon Data Page with PokeApiNet
 
-## 1. Task Overview
-Create a Blazor page that displays Pokémon data using the PokeApiNet library. The page should fetch and present data for a set of Pokémon, including their name, abilities, and types. The UI should be visually appealing (cards, images, creative layouts, etc). Reference the Weather page for structure.
+## 1. Setup & Package Installation (DO THIS FIRST)
 
-## 2. Setup & Package Installation
-- Locate the `.csproj` file for the Blazor Web App (e.g., `src/CopilotWebApp/CopilotWebApp/CopilotWebApp.csproj`).
-- Open a terminal and change directory to the folder containing the `.csproj` file:
-  ```sh
-  cd src/CopilotWebApp/CopilotWebApp
-  ```
-- Install the PokeApiNet NuGet package:
-  ```sh
-  dotnet add package PokeApiNet
-  ```
-- Confirm the package is listed in the `.csproj` file after installation.
+**You must install the PokeApiNet NuGet package before creating any pages or writing any code that references it.**
 
-## 3. Implementation Steps
+1. Locate the `.csproj` file for the Blazor Web App (e.g., `src/CopilotWebApp/CopilotWebApp/CopilotWebApp.csproj`).
+2. Open a terminal and change directory to the folder containing the `.csproj` file:
+   ```sh
+   cd src/CopilotWebApp/CopilotWebApp
+   ```
+3. Install the PokeApiNet NuGet package:
+   ```sh
+   dotnet add package PokeApiNet
+   ```
+4. Confirm the package is listed in the `.csproj` file after installation.
+5. **Only proceed to the next steps after the package is successfully installed for the project.**
+
+## 2. Implementation Steps
 ### a. Add a Blazor Page and Navigation Link
 - Create a new Razor page/component in `Components/Pages` (e.g., `Pokemon.razor`).
 - Add a navigation link to your new page in `Components/Layout/NavMenu.razor`:
@@ -96,7 +97,8 @@ Create a Blazor page that displays Pokémon data using the PokeApiNet library. T
 }
 ```
 
-## 4. Common Mistakes to Avoid
+
+## 3. Common Mistakes to Avoid
 - Never use lowercase property names for PokeApiNet models (e.g., `poke.id`).
 - Never use the `PokeApiNet.Models.Pokemon` namespace.
 - Never use direct HTTP calls or any other library for Pokémon data.
@@ -106,8 +108,19 @@ Create a Blazor page that displays Pokémon data using the PokeApiNet library. T
 - For nav menu icons, always use both the `bi` class and the custom icon class together (e.g., `<span class="bi bi-pokeball-nav-menu"></span>`).
 - If you accidentally create extra files, classes, or services, remove them and keep only the single Razor page/component.
 
+### Do NOT add or modify global stylesheets or imports:
+- Do **not** create or edit any CSS files outside of the Pokémon Razor page. All styling for the Pokémon page must be done using `<style>` blocks inside the `Pokemon.razor` file.
+- Do **not** add `@import` statements to any CSS file. Never add `@import url('pokemon.css');` or similar to `app.css` or any other stylesheet.
 
-## 8. Common Errors to Avoid (Historical Mistakes)
+### Do NOT add unnecessary @using directives:
+- Do **not** add `@using Microsoft.AspNetCore.Components` unless the page fails to build without it. Only add new `@using` directives if you encounter a build error that specifically requires it.
+
+### All code and styles for the Pokémon page must be self-contained:
+- Place all custom CSS for the Pokémon page inside a `<style>` block at the bottom of `Pokemon.razor`.
+- Do not create or edit any other files for styling or imports.
+
+
+## 4. Common Errors to Avoid (Historical Mistakes)
 
 **If you see any of the following errors, you are making a common mistake. Always check the PokeApiNet NuGet package documentation or source for the correct property names and usage.**
 
