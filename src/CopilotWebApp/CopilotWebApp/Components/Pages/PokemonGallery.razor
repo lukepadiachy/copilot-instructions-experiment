@@ -1,0 +1,150 @@
+@page "/pokemon"
+@using PokeApiNet
+
+<h1 class="pokemon-title">Pokémon Gallery</h1>
+
+@if (IsLoading)
+{
+    <div class="loading">Loading Pokémon...</div>
+}
+else if (PokemonList.Count == 0)
+{
+    <div class="error">No Pokémon found.</div>
+}
+else
+{
+    <div class="pokemon-grid">
+        @foreach (var poke in PokemonList)
+        {
+            <div class="pokemon-card">
+                <img class="pokemon-img" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/@(poke.Id).png" alt="@poke.Name" />
+                <h3 class="pokemon-name">@poke.Name</h3>
+                <div class="pokemon-types">
+                    @foreach (var type in poke.Types)
+                    {
+                        <span class="type-badge">@type.Type.Name</span>
+                    }
+                </div>
+                <div class="pokemon-abilities">
+                    <span class="abilities-label">Abilities:</span>
+                    @foreach (var ab in poke.Abilities)
+                    {
+                        <span class="ability-badge">@ab.Ability.Name</span>
+                    }
+                </div>
+            </div>
+        }
+    </div>
+}
+
+@code {
+    private List<PokeApiNet.Pokemon> PokemonList = new();
+    private bool IsLoading = true;
+
+    protected override async Task OnInitializedAsync()
+    {
+        var client = new PokeApiClient();
+        var page = await client.GetNamedResourcePageAsync<PokeApiNet.Pokemon>(limit: 12, offset: 0);
+        foreach (var entry in page.Results)
+        {
+            var poke = await client.GetResourceAsync<PokeApiNet.Pokemon>(entry.Name);
+            PokemonList.Add(poke);
+        }
+        IsLoading = false;
+    }
+}
+
+<style>
+.pokemon-title {
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 2.5rem;
+    color: #d7263d;
+    letter-spacing: 2px;
+    font-weight: bold;
+}
+.pokemon-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2rem;
+    margin: 2rem auto;
+    max-width: 1200px;
+}
+.pokemon-card {
+    background: linear-gradient(135deg, #f8f8f8 60%, #ffe0e9 100%);
+    border-radius: 1.5rem;
+    box-shadow: 0 4px 16px rgba(215,38,61,0.10), 0 1.5px 4px rgba(0,0,0,0.08);
+    padding: 1.5rem 1rem 1rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+.pokemon-card:hover {
+    transform: translateY(-6px) scale(1.03);
+    box-shadow: 0 8px 32px rgba(215,38,61,0.18), 0 2px 8px rgba(0,0,0,0.10);
+}
+.pokemon-img {
+    width: 96px;
+    height: 96px;
+    margin-bottom: 0.5rem;
+    image-rendering: pixelated;
+}
+.pokemon-name {
+    margin: 0.5rem 0 0.75rem 0;
+    font-size: 1.3rem;
+    color: #222;
+    text-transform: capitalize;
+    font-weight: 600;
+}
+.pokemon-types {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+.type-badge {
+    background: #d7263d;
+    color: #fff;
+    border-radius: 0.75rem;
+    padding: 0.2rem 0.8rem;
+    font-size: 0.95rem;
+    font-weight: 500;
+    text-transform: capitalize;
+    box-shadow: 0 1px 4px rgba(215,38,61,0.10);
+}
+.pokemon-abilities {
+    margin-top: 0.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.98rem;
+}
+.abilities-label {
+    color: #d7263d;
+    font-weight: 500;
+    margin-right: 0.3rem;
+}
+.ability-badge {
+    background: #fff0f3;
+    color: #d7263d;
+    border-radius: 0.75rem;
+    padding: 0.15rem 0.7rem;
+    font-size: 0.95rem;
+    font-weight: 500;
+    text-transform: capitalize;
+    border: 1px solid #ffd6e0;
+}
+.loading {
+    text-align: center;
+    margin-top: 3rem;
+    font-size: 1.5rem;
+    color: #d7263d;
+}
+.error {
+    text-align: center;
+    margin-top: 3rem;
+    font-size: 1.2rem;
+    color: #b00020;
+}
+</style>
