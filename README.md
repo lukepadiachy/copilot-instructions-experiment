@@ -1,6 +1,7 @@
 # Copilot Instructions Experiment
 
-![Custom Instructions for GitHub Copilot](assets/instructions-overview/overview.png)
+
+![Copilot Instructions](https://i.imgur.com/FzR7MHT.png)
 
 ## Overview
 
@@ -30,7 +31,8 @@ The **main** branch is a clean starting point, providing only this overview and 
 
 ## Customize Copilot....
 
-![3 points of copilot](assets/instructions-overview/the-why.png)
+
+![Reasons for copilot](https://i.imgur.com/n7CIku4.png)
 
 Customizing Copilot at the repo level lets you:
 - Set consistent coding style and workflow for your team or project.
