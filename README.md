@@ -12,7 +12,9 @@ The **main** branch is a clean starting point, providing only this overview and 
 ## How to Use This Repo
 
 1. **Start on `main`** to get the context and understand the motivation for customizing Copilot.
-2. **Switch to any `part-*` branch** to see a focused experiment or instruction in action:
+2. **Fork this repository** to your own GitHub account by clicking the "Fork on GitHub" button below or at the bottom of this README:
+  [![Fork on GitHub](https://img.shields.io/badge/Fork%20this%20repo-Fork%20on%20GitHub-green?style=for-the-badge&logo=github)](https://github.com/lukepadiachy/copilot-instructions-experiment/fork)
+3. **Switch to any `part-*` branch** to see a focused experiment or instruction in action:
    - Each branch adds or refines a Copilot instruction, prompt file, or code pattern.
    - Review the Copilot instructions, prompt files, and code changes in that branch.
    - Try using Copilot Chat with the provided prompts and instructions to see how Copilot's suggestions and behavior change.
@@ -56,3 +58,9 @@ Other resources:
 
 
 **Each branch is a snapshot of Copilot customization at a different stage, with practical examples and lessons learned. Switch between branches to explore and experiment!**
+
+
+[![LinkedIn](https://img.shields.io/badge/Share-LinkedIn-blue?style=for-the-badge&logo=linkedin)](https://www.linkedin.com/shareArticle?title=Copilot%20Instructions%20Experiment&url=https://github.com/lukepadiachy/copilot-instructions-experiment)
+[![X](https://img.shields.io/badge/Share-X-1DA1F2?style=for-the-badge&logo=twitter)](https://twitter.com/intent/tweet?text=Check%20out%20this%20Copilot%20Instructions%20Experiment!%20https://github.com/lukepadiachy/copilot-instructions-experiment)
+[![Facebook](https://img.shields.io/badge/Share-Facebook-1877F2?style=for-the-badge&logo=facebook)](https://www.facebook.com/sharer/sharer.php?u=https://github.com/lukepadiachy/copilot-instructions-experiment)
+[![WhatsApp](https://img.shields.io/badge/Share-WhatsApp-25D366?style=for-the-badge&logo=whatsapp)](https://api.whatsapp.com/send?text=Check%20out%20this%20Copilot%20Instructions%20Experiment!%20https://github.com/lukepadiachy/copilot-instructions-experiment)
