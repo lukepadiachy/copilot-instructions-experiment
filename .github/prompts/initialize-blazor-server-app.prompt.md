@@ -16,4 +16,4 @@ Can you initialize this repository with a .NET Blazor server app?
 - [Blazor Web App documentation](https://learn.microsoft.com/en-us/aspnet/core/blazor/?view=aspnetcore-9.0)
 - [Copilot Customization Docs](https://code.visualstudio.com/docs/copilot/copilot-customization)
 
-If you need more details about Blazor or .NET SDK setup, use the `mcp_microsoft-lea_microsoft_docs_search` tool for official Microsoft documentation.
+If you need more details about Blazor or .NET SDK setup, use the relevant links above for official Microsoft documentation.

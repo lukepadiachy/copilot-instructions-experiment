@@ -1,18 +1,57 @@
-# Copilot Instructions Experiment
-## What This Repo Covers
-This repo demonstrates **3 main ways** to customize GitHub Copilot:
-1. **Custom Instructions**
-   Define how Copilot should assist you – from coding style to commit message format.
-2. **Prompt Files (Experimental)**
-   Reusable task-specific prompts that you can run directly in chat (e.g., for code reviews, security checks, etc).
-3. **Custom Chat Modes**
-   Set up different behaviors and tools Copilot should use in chat.
-## Why Customize Copilot?
-- **No more repeats** – Tell Copilot once how you work and it remembers
-- **Saves time** – Get code that fits your style and project stack
-- **Easy to set up** – Instructions live in your workspace, not just your head
-## Resources to Learn More
-* [Customize Copilot in VS Code](https://code.visualstudio.com/docs/copilot/copilot-customization)
-* [GitHub Docs – Adding Repo Instructions](https://docs.github.com/en/copilot/how-tos/custom-instructions/adding-repository-custom-instructions-for-github-copilot)
-* [Sample Chat Mode File by Burke Holland](https://gist.github.com/burkeholland/a232b706994aa2f4b2ddd3d97b11f9a7)
-* [PokeApiNet - A .Net wrapper for the Pokemon API](https://gist.github.com/burkeholland/a232b706994aa2f4b2ddd3d97b11f9a7)
+# Part Two - Add Prompt File
+
+## What This Branch Demonstrates
+This branch is **part two** of the Copilot customization experiment, focusing on **Prompt Files**. Prompt files let you define reusable instructions for Copilot chat, making it easy to run complex or repetitive tasks with a single command.
+
+
+
+## What Are Prompt Files?
+Prompt files are markdown files (usually in `.github/prompts/`) that contain instructions for Copilot. They:
+- Automate project setup, code generation, or other repetitive development tasks
+- Provide step-by-step guidance for common workflows
+- Are triggered by typing `/` in Copilot chat or by referencing their name
+
+**Example:**
+- `initialize-blazor-server-app.prompt.md` sets up a Blazor app in a specific folder with strict requirements, using the latest .NET SDK.
+
+
+## How to Use Prompt Files in This Repo
+1. **Trigger a Prompt File in Copilot Chat:**
+   - Type `/initialize-blazor-server-app` in Copilot chat, or select it from the prompt list.
+   - Copilot will follow the instructions in the prompt file to perform the task.
+2. **Test With and Without the Prompt:**
+   - Try running the same task manually in chat (without `/` or the prompt file) and compare results.
+   - Notice how the prompt file enforces requirements and automates the workflow.
+
+
+## Breakdown: Purpose of Each Section
+- **Description:** What the prompt does and when to use it.
+- **Mode:** How Copilot should behave (e.g., agent mode for automation).
+- **Instructions:** Step-by-step actions Copilot should take.
+- **References:** Links to official docs for further reading.
+
+
+
+## Why Use Prompt Files?
+- **Reusable Components:** Prompt files are building blocks for your workflow. Create prompts for any tech stack or task, such as initializing a Blazor app, scaffolding components, or running tests.
+- **Consistency:** Ensures tasks are performed the same way every time, following your team's standards.
+- **Speed:** Automates repetitive or complex workflows, saving time and reducing manual errors.
+- **Customization:** Tailors Copilot to your project's needs, making it easy to adapt instructions for different stacks or scenarios.
+
+
+
+## Try It Yourself
+- Open Copilot chat in VS Code.
+- Type `/` and select `/initialize-blazor-server-app` to watch Copilot set up the Blazor app as described in the prompt file.
+- Try running the same setup manually in chat (without `/` or the prompt file) and compare the experience.
+- Experiment with other prompt files or create your own in `.github/prompts/` for different tech stacks or tasks.
+
+
+## Resources
+- [Copilot Prompt Files Docs](https://code.visualstudio.com/docs/copilot/copilot-customization)
+- [Blazor Web App documentation](https://learn.microsoft.com/en-us/aspnet/core/blazor/?view=aspnetcore-9.0)
+- [GitHub Docs – Adding Repo Instructions](https://docs.github.com/en/copilot/how-tos/custom-instructions/adding-repository-custom-instructions-for-github-copilot)
+
+---
+
+> **Tip:** Prompt files are a powerful way to make Copilot work for you. Use them to automate, standardize, and simplify your development workflow. They are reusable and can be adapted for any project or stack.
