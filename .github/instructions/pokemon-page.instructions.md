@@ -22,12 +22,14 @@ applyTo: "**"
 5. **Only proceed to the next steps after the package is successfully installed for the project.**
 
 ## 2. Implementation Steps
+
 ### a. Add a Blazor Page and Navigation Link
 - Create a new Razor page/component in `Components/Pages` (e.g., `Pokemon.razor`).
-- Add a navigation link to your new page in `Components/Layout/NavMenu.razor`:
+- **Do not add any new @using imports to `_Imports.razor` or the page unless you encounter a build error that specifically requires it.**
+- Add the navigation link for the Pokémon page *inside* the `<nav class="nav flex-column">` block in `Components/Layout/NavMenu.razor` (not outside). Example:
   ```razor
   <div class="nav-item px-3">
-      <NavLink class="nav-link" href="pokemon">
+      <NavLink class="nav-link" href="pokemon-gallery">
           <span class="bi bi-pokeball-nav-menu" aria-hidden="true"></span> Pokémon
       </NavLink>
   </div>
@@ -40,20 +42,10 @@ applyTo: "**"
       background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='white' viewBox='0 0 16 16'%3E%3Ccircle cx='8' cy='8' r='7' stroke='black' stroke-width='2' fill='white'/%3E%3Crect x='1' y='7' width='14' height='2' fill='red' stroke='black' stroke-width='0.5'/%3E%3Ccircle cx='8' cy='8' r='2.5' fill='white' stroke='black' stroke-width='1'/%3E%3Ccircle cx='8' cy='8' r='1' fill='white' stroke='black' stroke-width='1'/%3E%3C/svg%3E");
   }
 
-### b. Avoid Duplicating @using Directives
-- When adding `@using` directives to `_Imports.razor`, check if they already exist. Only add if not present. Example standard imports:
-  ```razor
-  @using System.Net.Http
-  @using System.Net.Http.Json
-  @using Microsoft.AspNetCore.Components.Forms
-  @using Microsoft.AspNetCore.Components.Routing
-  @using Microsoft.AspNetCore.Components.Web
-  @using static Microsoft.AspNetCore.Components.Web.RenderMode
-  @using Microsoft.AspNetCore.Components.Web.Virtualization
-  @using Microsoft.JSInterop
-  @using YourAppNamespace
-  @using YourAppNamespace.Components
-  ```
+
+### b. Avoid Duplicating or Unnecessary @using Directives
+- **Do not add any new @using imports to `_Imports.razor` or the Pokémon page unless you encounter a build error that specifically requires it.**
+- When adding `@using` directives, check if they already exist. Only add if not present and only if required for build.
 
 ### c. Fetch Pokémon Data in the Razor Page
 - Do **not** create or register a service, class, or file for Pokémon data.
@@ -98,6 +90,7 @@ applyTo: "**"
 ```
 
 
+
 ## 3. Common Mistakes to Avoid
 - Never use lowercase property names for PokeApiNet models (e.g., `poke.id`).
 - Never use the `PokeApiNet.Models.Pokemon` namespace.
@@ -107,6 +100,8 @@ applyTo: "**"
 - Never install Python packages or use Python tools for .NET/Blazor projects.
 - For nav menu icons, always use both the `bi` class and the custom icon class together (e.g., `<span class="bi bi-pokeball-nav-menu"></span>`).
 - If you accidentally create extra files, classes, or services, remove them and keep only the single Razor page/component.
+- **Never add unnecessary @using imports to `_Imports.razor` or the Pokémon page. Only add if required for build.**
+- **Always place the Pokémon nav menu link inside the `<nav class="nav flex-column">` block, not outside.**
 
 ### Do NOT add or modify global stylesheets or imports:
 - Do **not** create or edit any CSS files outside of the Pokémon Razor page. All styling for the Pokémon page must be done using `<style>` blocks inside the `Pokemon.razor` file.
