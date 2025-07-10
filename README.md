@@ -54,4 +54,6 @@ Prompt files are markdown files (usually in `.github/prompts/`) that contain ins
 
 ---
 
+> **Side Note:** Using the `tools:` section in prompts can sometimes be tedious or not work as intended. You may find better results by letting Copilot handle tasks without specifying tools directly. This project works best when you use prompt files without the `tools:` section, but feel free to experiment and see what works for your workflow.
+
 > **Tip:** Prompt files are a powerful way to make Copilot work for you. Use them to automate, standardize, and simplify your development workflow. They are reusable and can be adapted for any project or stack.
