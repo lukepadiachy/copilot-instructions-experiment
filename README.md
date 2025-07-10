@@ -2,7 +2,7 @@
 # Part One - Add Copilot Instructions
 
 
-![Description of image](https://i.imgur.com/5aGdG5h.png)
+![Custom Instructions](https://i.imgur.com/5aGdG5h.png)
 
 
 This branch demonstrates how to use repository-level Copilot instructions to guide code generation and workflow in your project.
