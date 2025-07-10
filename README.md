@@ -30,7 +30,7 @@ The **main** branch is a clean starting point, providing only this overview and 
 
 ## Customize Copilot....
 
-![alt text](assets/instructions-overview/the-why.png)
+![3 points of copilot](assets/instructions-overview/the-why.png)
 
 Customizing Copilot at the repo level lets you:
 - Set consistent coding style and workflow for your team or project.
