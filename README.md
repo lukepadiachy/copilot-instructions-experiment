@@ -21,7 +21,7 @@ See: [Customize Copilot in VS Code](https://code.visualstudio.com/docs/copilot/c
 Follow these steps to see the difference Copilot instructions make:
 
 1. **Try Without Instructions:**
-   - Remove or rename `.github/copilot-instructions.md` (if present).
+   - Remove `.github/copilot-instructions.md` (if present).
    - Ask Copilot to create a .NET Blazor server app at `src/CopilotWebApp/CopilotWebApp`.
    - Observe what files are generated and how Copilot responds.
 
