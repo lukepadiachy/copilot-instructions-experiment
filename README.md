@@ -16,12 +16,24 @@ This branch introduces a **task-specific instruction and prompt system** for Cop
 - **Prompt Files**: The mission briefing. Tells Copilot exactly what to do for a specific task, referencing the task instructions for context. It’s the difference between “be a good coder” and “build this Pokémon page, and don’t you dare use lowercase property names!”
 
 
+
 ## What Copilot Did Wrong (So You Don’t Have To)
 - Accidentally tried to use `poke.id` instead of `poke.Id`? That’s a one-way ticket to Errorville.
 - Thought about creating a `pokemonService` class? Nope! The instructions say fetch data directly in the Razor page, or face the wrath of the forbidden mistakes list.
 - Added a global stylesheet or imported `pokemon.css`? The instructions will find you. All styles must live inside the Pokémon page itself.
 - Used direct HTTP calls or another library for Pokémon data? That’s a classic blunder—only PokeApiNet is allowed.
 - Registered a service for Pokémon data? The instructions specifically say: “Do not.”
+- Sometimes, Copilot got a little too creative and tried to install Python packages for a .NET Blazor project. (Nice try, but wrong Pokéball!)
+- **2025-07-10 Update:** Copilot sometimes added unnecessary `@using` imports to `_Imports.razor` or the Pokémon page, even when not required. This led to confusion and clutter. Also, the Pokémon nav menu link was sometimes placed outside the `<nav class="nav flex-column">` block, causing it not to appear in the sidebar. The instructions and this README have now been updated to make these requirements explicit. Always place the Pokémon nav link inside the nav block and avoid unnecessary imports!
+
+
+## Try the Pokémon Prompt Yourself!
+Want to see Copilot in action? You can try out the Pokémon prompt:
+1. Type `/` in the Copilot chat or command palette.
+2. Select the Pokémon prompt.
+3. Run it and watch Copilot build a Pokémon page for you! (Pro tip: The outcome isn’t always the same—sometimes you get Pikachu, sometimes you get a wild error. That’s the magic of AI!)
+
+![Placeholder for Pokémon Page Screenshot](https://i.imgur.com/kXzCcqf.png)
 
 
 ## Why This Matters
